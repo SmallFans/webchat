@@ -3,8 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/chat.css" />
 </head>
-<body>
-<script src="js/index.js"></script>
+<body class="body">
+<div class="chatBox">
+    <div class="chatLeft">
+        <div class="chat03">
+            <div class="chat03_title">
+                <div class="avatar">
+                    <img src="img/userImg.png" class="img">
+                </div>
+                <div class="info">
+                    <h3 class="nickname">
+                        <span class="display_name" myId=""></span>
+                    </h3>
+                </div>
+            </div>
+            <div class="search_bar">
+                <i class="web_wechat_search"></i>
+                <input class="frm_search" placeholder="搜索">
+            </div>
+            <div class="chat03_content">
+                <ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="chatRight">
+        <div class="chat01_title" style="position: relative;padding: 10px 0;margin: 0 19px;border-bottom: 1px solid #d6d6d6;">
+            <ul>
+                <li>
+                    <a href="javascript:void(0);"><img src="img/userImg.png" class="contacter_img"></a>
+                    <a href="javascript:;" class="chat01_name" id="chat01_name"></a>
+                </li>
+            </ul>
+            <!--   <a class="close_btn" href="javascript:;"></a>-->
+        </div>
+        <div class="showList">
+
+            <div class="chat01">
+
+                <div class="chat01_content">
+
+                </div>
+            </div>
+            <div class="chat02">
+                <div>
+                    <div class="chat02_title">
+                        <a class="chat02_title_btn ctb01" href="javascript:;"></a>
+                        <a class="ctb02 chat02_img_btn" href="javascript:;" id="chat02_send_img"></a>
+                    </div>
+                </div>
+                <div class="chat02_content">
+                    <textarea id="textarea"></textarea>
+                </div>
+                <div class="chat02_bar">
+                    <form action="">
+                        <ul>
+                            <li style="right: 15px; top: 0px;" id="replyButton">
+                                <a href="javascript:;">发&nbsp;送<!--<img src="img/send_btn.jpg">--></a></li>
+                            <li style="right: 85px; top: 7px;" id="replyButton1">
+                                Ctrl+Enter换行</li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div style="clear: both;">
+    </div>
+</div>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/chat.js"></script>
 </body>
 </html>
