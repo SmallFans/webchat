@@ -47,16 +47,16 @@ module.exports = function(env = {}){
 
     module: {
       loaders: [
-        {
-          test: /\.js$/,
-          exclude: /(node_modules|bower_components)/,
-          loader: 'babel-loader',
-          query: babelConf
-        },
-        {
-          test: /\.css$/,
-          loader: 'style-loader!css-loader'
-        }
+          {
+            test: /\.js$/,
+            exclude: /(node_modules|bower_components)/,
+            loader: 'babel-loader',
+            query: babelConf
+          },
+          {
+            test: /\.css$/,
+            loader: 'style-loader!css-loader'
+          }
       ]
     },
 

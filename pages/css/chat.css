@@ -112,7 +112,7 @@ ul, ol, li { list-style-type: none; vertical-align: 0 }
 .talkTo li {_background-position: 0 0; line-height: 17px; float: left; padding-left: 6px; margin: 5px 20px; _margin-left: 9px; }
 .talkTo li a {padding: 4px 11px 4px 7px; _padding-top: 0px; _padding-bottom: 0px; height: 19px; font-size: 12px; font-weight: bold; color: #333; text-decoration: none;}
 .close_btn {
-    /*background: url('../img/icon.png') no-repeat 0 0; */
+     /*background: url('../img/icon.png') no-repeat 0 0; */
     position: absolute; top: 25px; right: 8px; display: block; width: 15px; height: 15px; }
 .chat02_title { border-top: 1px solid #ccc; height: 25px; position: relative; }
 .chat02_bar { height: 35px; position: relative; }

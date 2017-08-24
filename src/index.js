@@ -1,2 +1,2 @@
-import '../pages/css/chat.css'
+ import '../pages/css/chat.css'
 console.log("123")
