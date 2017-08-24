@@ -1,7 +1,7 @@
 /**
  * Created by yangjiao on 2017/8/22.
  */
-var currentAgent={id:"@fdab6a4f3ec981aa4dcd3de64dca3ab4",nick:"小粉丝",sign:""};
+var currentAgent={id:"@fdab6a4f3ec981aa4dcd3de64dca3ab4",nick:"out",sign:""};
 $(document).ready(function () {
   initContacter()
   chatInit()
@@ -65,17 +65,109 @@ var showUserMsg = function (msgId,src) {
         html.push(showMsg(msgList[j]));
       }
       pane.prepend(html.join(""));
+      for (var j = msgList.length-1; j >= 0; j--) { //转html
+        var changePane=pane.find("div[mid = '"+ msgList[j]._id +"']").find(".wrap-content");
+        var selfPane=pane.find("div[mid = '"+ msgList[j]._id +"'][class='message clearfix self']")
+        if(msgList[j].msgType==1 && selfPane.length<=0){
+          changePane.html(msgList[j].content);
+        }else if(msgList[j].msgType==1 && selfPane.length>0){
+          var _txt=escapeHtml(msgList[j].content);
+          _txt=_txt.replace(/\n/g,"<br/>");
+          changePane.html(_txt);
+        }
+      }
+      pane.show().siblings().hide();
+      _locationMsg(pane);
     })
+  } else {
+    chatPane=$(".chat01_content").find("div[id='mes"+_id+"']");
+    var userPane=$(".chat03_content").find("div[id = '"+msgId+"']");
+    var msgList=userPane.data("user_msgs")||[];
+    if(msgList.length>0){
+      userPane.data("user_msgs",[]);
+      for(var j = 0;j<msgList.length;j++){
+        var msgTime=msgList[j].time;
+        var date=new Date();
+        date.setTime(msgTime*1000);
+        var msgItem = {
+          _id:msgList[j].mid,
+          createTime:msgList[j].time,
+          createTimeStr:getCurrentDateTime(date),
+          msgType:msgList[j].type,
+          fromUser:msgList[j].fromUser,
+          toUser:msgList[j].toUser,
+          content:msgList[j].content,
+          isRealtime:true
+        }
+        chatPane.append(showMsg(msgItem));
+        var lastEles=chatPane.find('div.message:last').find(".wrap-content");
+        var _txt=escapeHtml(msgList[j].content);
+        _txt=_txt.replace(/\n/g,"<br/>");
+        lastEles.html(_txt);
+      }
+      chatPane.show().siblings().hide();
+      _locationMsg(chatPane);
+    }else{
+      chatPane.show().siblings().hide();
+    }
   }
 }
-
+var _locationMsg=function (container) {
+  window.setTimeout(function () {
+    var lastMsg = container.find(".message:last");
+    if (lastMsg.length > 0) {
+      var scrollTop = lastMsg.offset().top - container.offset().top + container.scrollTop() + lastMsg.innerHeight();
+      container.scrollTop(scrollTop);
+    }
+  }, 500);
+}
+var showMsg = function (wxObj) {
+  var time = wxObj.createTime;
+  var msgId = wxObj._id;
+  var revoke = wxObj.revoke||false;
+  var timeDesc = "";
+  wxObj.ts=time;
+  wxObj.time = timeDesc;
+  var msgType = wxObj.msgType;
+  var type=wxObj.fromUser==currentAgent.nick?"out":"in";
+  if(wxObj.isRealtime){//实时消息
+    type=wxObj.fromUser==currentAgent.id?"out":"in";
+  }
+  var tmpl = "";
+  if(type=='in'){
+    if(msgType == 1){
+      tmpl = "tmpl_newwebchat_msg_from";
+    }
+  }else{
+    if(msgType == 1){
+      tmpl = "tmpl_newwebchat_msg_to";
+    }
+  }
+  tmpl = template(tmpl, wxObj);
+  return tmpl;
+}
+/**
+ * 解码程html符号
+ * @param str
+ * @returns {*}
+ */
+function escapeHtml(str){
+  str = String(str).replace(/&/gm, "&amp;").replace(/</gm, "&lt;")
+    .replace(/>/gm, "&gt;").replace(/"/gm, "&quot;").replace(/'/gm,"&#39;");
+  return str;
+}
 var queryMsgHistory = function(currentAgent, callback) {
   var msgList = [
-    {content: '咱家开的手机铃声1'},
-    {content: '咱家开的手机铃声2'},
-    {content: '咱家开的手机铃声3'},
-    {content: '咱家开的手机铃声4'},
-    {content: '咱家开的手机铃声5'}
+    {
+      content: '咱家开的手机铃声1',
+      createTime: '2017年8月23日',
+      _id:'2260de0a6aeec2555ef67388bd41a6a5',
+      msgType: 1,
+      fromUser: '李四',
+      toUser: '张三',
+      createTimeStr: '2017年8月24日',
+      isRealtime: false
+    }
   ]
   if (typeof callback == "function") {
     callback(msgList);

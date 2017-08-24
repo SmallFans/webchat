@@ -1,5 +1,4 @@
 module.exports = function(env = {}){
-
   const webpack     = require('webpack'),
         path        = require('path'),
         fs          = require('fs'),
@@ -24,16 +23,16 @@ module.exports = function(env = {}){
       })
     );
   }
-
+  let babelConf
   if(fs.existsSync('./.babelrc')){
     //use babel
-    let babelConf = JSON.parse(fs.readFileSync('.babelrc'));
-    loaders.push({
-      test: /\.js$/,
-      exclude: /(node_modules|bower_components)/,
-      loader: 'babel-loader',
-      query: babelConf
-    });
+    babelConf = JSON.parse(fs.readFileSync('.babelrc'));
+    // loaders.push({
+    //   test: /\.js$/,
+    //   exclude: /(node_modules|bower_components)/,
+    //   loader: 'babel-loader',
+    //   query: babelConf
+    // });
   }
 
   return {
@@ -47,7 +46,18 @@ module.exports = function(env = {}){
     plugins: plugins,
 
     module: {
-      loaders: loaders
+      loaders: [
+        {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          loader: 'babel-loader',
+          query: babelConf
+        },
+        {
+          test: /\.css$/,
+          loader: 'style-loader!css-loader'
+        }
+      ]
     },
 
     devServer: {

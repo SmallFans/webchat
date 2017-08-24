@@ -70,7 +70,7 @@ ul, ol, li { list-style-type: none; vertical-align: 0 }
 }
 .web_wechat_add{
     display: inline-block;
-    background: url(../img/userImg.png);
+    /*background: url(../img/userImg.png);*/
     vertical-align: middle;
     width: 30px;
     height: 30px;
@@ -86,7 +86,7 @@ ul, ol, li { list-style-type: none; vertical-align: 0 }
     top: 1px;
 }
 .web_wechat_search{
-    background: url(../img/chaticon.png);
+    /*background: url(../img/chaticon.png);*/
     background-position: -60px -432px;
     -webkit-background-size: 487px 462px;
     background-size: 487px 462px;
@@ -111,7 +111,9 @@ ul, ol, li { list-style-type: none; vertical-align: 0 }
 }
 .talkTo li {_background-position: 0 0; line-height: 17px; float: left; padding-left: 6px; margin: 5px 20px; _margin-left: 9px; }
 .talkTo li a {padding: 4px 11px 4px 7px; _padding-top: 0px; _padding-bottom: 0px; height: 19px; font-size: 12px; font-weight: bold; color: #333; text-decoration: none;}
-.close_btn { background: url('../img/icon.png') no-repeat 0 0; position: absolute; top: 25px; right: 8px; display: block; width: 15px; height: 15px; }
+.close_btn {
+    /*background: url('../img/icon.png') no-repeat 0 0; */
+    position: absolute; top: 25px; right: 8px; display: block; width: 15px; height: 15px; }
 .chat02_title { border-top: 1px solid #ccc; height: 25px; position: relative; }
 .chat02_bar { height: 35px; position: relative; }
 .chat02_bar li { position: absolute; }
@@ -125,6 +127,11 @@ ul, ol, li { list-style-type: none; vertical-align: 0 }
     display: block;
     font-size: 13px;
     font-weight: 700;}
+.chat03_remark { color: #ccc;
+    position: absolute;
+    top: 34px;
+    left: 65px;
+    display: block;}
 .chat03_count {    top: 18px;
     left: 200px;
     border-radius: 15px;
@@ -154,16 +161,43 @@ ul, ol, li { list-style-type: none; vertical-align: 0 }
 .chat03_content ul li a {cursor: pointer}
 .chat03_content ul img { width: 35px; height: 35px; }
 .chat03_content li label { display: block; position: absolute; width: 9px; height: 9px; left: 27px; }
-.chat02_title_btn {background: url(../img/font-icon.png);cursor: pointer;float: left;display: block;width: 20px;height: 20px;margin: 3px 6px;}
+.chat02_title_btn {
+    /*background: url(../img/font-icon.png);*/
+    cursor: pointer;float: left;display: block;width: 20px;height: 20px;margin: 3px 6px;}
 .ctb01 { margin-left: 10px; _margin-left: 8px}
-.chat02_img_btn {background: url(../img/image-icon.png);cursor: pointer;float: left;display: block;width: 20px;height: 20px;margin: 5px 6px;}
+.chat02_img_btn {
+    /*background: url(../img/image-icon.png);*/
+    cursor: pointer;float: left;display: block;width: 20px;height: 20px;margin: 5px 6px;}
 .ctb02 {  margin-left: 10px; _margin-left: 8px; background-color: #eee}
-.chat02_title_t { background: url('../img/icon.png') no-repeat 0px -487px; position: absolute; padding-left: 25px; top: 8px; right: 20px; display: block; width: auto; height: 15px; }
+.chat02_title_t {
+    /*background: url('../img/icon.png') no-repeat 0px -487px; */
+    position: absolute; padding-left: 25px; top: 8px; right: 20px; display: block; width: auto; height: 15px; }
 .chat02_title_t a { color: #333; font-size: 12px; text-decoration: none; }
 .chat02_title_t a:hover { color: #f60; text-decoration: underline; }
 .chat01_title ul li { position: relative; padding: 3px 6px; height: 31px; _padding-bottom: 0px; }
 .chat01_title ul img { width: 30px; height: 30px; }
 .chat01_name { color: #333; position: absolute; top: 9px; left: 40px; display: block;text-decoration: none;}
+.message_box { display: none;height: 405px;overflow-y: auto;}
+.message {clear: both; padding: 10px 10px;}
+.message .wrap-text .wrap-content{padding: 4px 10px;word-break: break-all;word-wrap: break-word;display: block}
+.message .wrap-text div.content{margin-left: 5px; border-color: #A2D0E7;  position: relative;  border-radius: 15px;  transition: padding-right 0.2s ease; }
+.self .wrap-text div.content {  margin-left: 5px;  background-color: #ccc;  border-color: #ccc;  position: relative;  border-radius: 15px; transition: padding-right 0.2s ease;}
+.content_from .arrow{top: 3px;width: 15px;  height: 10px;  border: none;
+    /*background: url(../img/arrows.png);  */
+    background-size: 15px auto;  position: absolute;  }
+.pull-left{float: left;}
+.pull-right{float: right;}
+.text-algin-r{text-align: right;}
+.message .chat_time{color:#999;margin-bottom: 5px;}
+
+.wl_font_box { position: absolute; bottom: 22px; left: 5px; display: none; }
+.wl_font_content { background: #fff; border: 1px #ccc solid; width: 34px; height: 95px; margin: 3px 4px; }
+.wl_font_main ul li {  height: 11px;line-height: 11px; margin: -1px 0 0 -1px; padding: 4px 2px; text-align: center; }
+.wl_font_main ul li a {  text-decoration: none;color: #000;}
+.wl_font_main ul li img { width: 22px; height: 22px; }
+.wlf_icon {
+    /*background: url('../img/arrows.png') no-repeat 0 0; */
+    position: absolute; width: 22px; height: 9px; bottom: -5px; left: 9px; }
 .chat01_content{
     height: 410px;
 }
@@ -176,6 +210,57 @@ ul, ol, li { list-style-type: none; vertical-align: 0 }
     border-radius: 4px;
     border: 1px solid #c1c1c1;
 }
+
+.content_to .arrow{
+    position: absolute;
+    /*background: url(../img/arrows.png);*/
+    background-size: 15px auto;
+    top: 3px;
+    right: -8px;
+    width: 15px;
+    height: 10px;
+    border: none;
+    background-position: 0 -14px;
+
+    /*   display: block;*/
+}
+audio:not([controls]) {
+    display: none;
+}
+audio {
+    width: 300px;
+    height: 32px;
+}
+.audio_img {
+    height: 15px;
+    margin-right: 15px;
+}
+.muted {
+    color: #999;
+}
+.remarkRed{
+    color:red ;
+}
+/* 效果CSS结束 */
+::-webkit-scrollbar {
+    width: 10px;
+} /* 这是针对缺省样式 (必须的) */
+::-webkit-scrollbar-track {
+    /* background-color: #b46868;*/
+} /* 滚动条的滑轨背景颜色 */
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+} /* 滑块颜色 */
+
+::-webkit-scrollbar-button {
+    /*   background-color: #7c2929;*/
+} /* 滑轨两头的监听按钮颜色 */
+
+::-webkit-scrollbar-corner {
+    background-color: black;
+} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
 .frm_search_main ul img {
     width: 35px;
     height: 35px;
@@ -196,5 +281,62 @@ ul, ol, li { list-style-type: none; vertical-align: 0 }
     border-radius: 2px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
-   /* outline: none;*/
+    /* outline: none;*/
+}
+.frm_search_div .frm_search_content{
+    background: #393c43;
+    max-height: 420px;
+    position: relative;
+    padding: 0px;
+    overflow: hidden;
+}
+.frm_search_div .frm_search_content .frm_search_main{
+    margin-bottom: 0px;
+    margin-right: 0px;
+    max-height: 420px;
+    border: none;
+    left: 0;
+    padding: 0;
+    position: relative;
+    top: 0;
+    width: auto;
+    overflow-y: auto;
+}
+.on{
+    background-color: #595b64 !important;
+}
+.dropdown {
+    position: relative;
+    z-index: 1000;
+}
+.dropdown.contextMenu {
+    position: absolute;
+}
+
+/*#contextMenu{*/
+/*right: 0px;*/
+/*}*/
+.dropdown_menu {
+    background-color: #fff;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #d6d6d6;
+    box-shadow: 2px 3px 10px rgba(0,0,0,.1);
+    -moz-box-shadow: rgba(0,0,0,.1) 2px 3px 10px;
+    -webkit-box-shadow: rgba(0,0,0,.1) 2px 3px 10px;
+    min-width: 100px;
+}
+.dropdown_menu li{
+    padding-left: 10px;
+}
+.dropdown_menu li a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    padding: 8px;
+    border-bottom: 1px solid #f1f1f1;
+    text-align: left;
 }

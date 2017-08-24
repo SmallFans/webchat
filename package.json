@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server -d --quiet & http-server pages -c-1 -p 8081",
+    "start": "webpack-dev-server --port 8088 -d --quiet & http-server pages -c-1 -p 8081",
     "build-release": "webpack --env.production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -35,5 +35,9 @@
     "http-server": "^0.10.0",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.6.1"
+  },
+  "dependencies": {
+    "css-loader": "^0.28.5",
+    "style-loader": "^0.18.2"
   }
 }
