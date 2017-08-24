@@ -1,0 +1,342 @@
+/*@charset "utf-8";*/
+body, ul,li, p,textarea, form, select,div { margin: 0; padding: 0; -webkit-text-size-adjust: none;}
+body{
+    height: 100%;
+    overflow: hidden
+}
+body>div { margin: 0 auto }
+div { text-align: left }
+a img { border: 0 }
+body { color: #333; text-align: center; font: 12px "\5B8B\4F53"; margin: 0;padding: 0;}
+ul, ol, li { list-style-type: none; vertical-align: 0 }
+.chatBox {height: 620px;
+    width: 1000px;
+    border: 1px #ccc solid;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    border-radius: 4px;
+    background-color: #eee;}
+.chatLeft {width: 280px;height: auto;float: left;background-color: #2e3238;height: 100%}
+.chat03{
+    height: 100%;
+}
+.chatRight {width: 720px;height: auto;float: right;}
+.chat01_title, .chat03_title {  padding: 15px; position: relative; }
+.chat03_title .avatar{
+    display: table-cell;
+    vertical-align: middle;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: nowrap;
+    padding-right: 10.625px;
+}
+.chat03_title .avatar .img{
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    display: block;
+    cursor: pointer;
+}
+.chat03_title .info{
+    display: table-cell;
+    vertical-align: middle;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.chat03_title .info .nickname .display_name{
+    display: inline-block;
+    font-weight: 400;
+    width: 156px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    color: #fff;
+    font-size: 18px;
+    vertical-align: top;
+    line-height: 31px;
+    text-decoration: none;
+}
+.chat03_title .info .nickname .opt{
+    display: inline-block;
+    outline: 0;
+    vertical-align: top;
+}
+.web_wechat_add{
+    display: inline-block;
+    /*background: url(../img/userImg.png);*/
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+}
+.search_bar{
+    position: relative;
+    width: 244px;
+    margin: 0 auto 6px;
+}
+.search_bar .web_wechat_search{
+    position: absolute;
+    z-index: 101;
+    top: 1px;
+}
+.web_wechat_search{
+    /*background: url(../img/chaticon.png);*/
+    background-position: -60px -432px;
+    -webkit-background-size: 487px 462px;
+    background-size: 487px 462px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+}
+.search_bar .frm_search{
+    width: 214px;
+    height: 32px;
+    line-height: 32px;
+    border: 0;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    background-color: #26292e;
+    color: #fff;
+    padding-left: 30px;
+    font-size: 12px;
+    outline: none;
+}
+.talkTo li {_background-position: 0 0; line-height: 17px; float: left; padding-left: 6px; margin: 5px 20px; _margin-left: 9px; }
+.talkTo li a {padding: 4px 11px 4px 7px; _padding-top: 0px; _padding-bottom: 0px; height: 19px; font-size: 12px; font-weight: bold; color: #333; text-decoration: none;}
+.close_btn {
+     /*background: url('../img/icon.png') no-repeat 0 0; */
+    position: absolute; top: 25px; right: 8px; display: block; width: 15px; height: 15px; }
+.chat02_title { border-top: 1px solid #ccc; height: 25px; position: relative; }
+.chat02_bar { height: 35px; position: relative; }
+.chat02_bar li { position: absolute; }
+.chat02_content { height: auto; }
+.chat03_content { text-align: left;font-size: 12px;  color: #333;overflow-y:auto;overflow-x:hidden;border-top: 1px solid #26292e;height: 77% }
+.chat02_content textarea {border: medium none;display: block;width: 710px;height: 70px;overflow-y: auto;padding: 5px;resize: none;outline: none;box-shadow: none;background-color: #eee}
+.chat03_name { color: #fff;
+    position: absolute;
+    top: 14px;
+    left: 65px;
+    display: block;
+    font-size: 13px;
+    font-weight: 700;}
+.chat03_remark { color: #ccc;
+    position: absolute;
+    top: 34px;
+    left: 65px;
+    display: block;}
+.chat03_count {    top: 18px;
+    left: 200px;
+    border-radius: 15px;
+    color: #fff;
+    position: absolute;
+    width: 20px;
+    height: 18px;
+    text-align: center;
+    padding: 0px;
+    padding-top: 3px;}
+.chat03_content ul { }
+.chat03_content ul li {     position: relative;
+    padding: 12px 18px 11px;
+    border-bottom: 1px solid #292c33;
+    cursor: pointer; }
+.frm_search_main ul li {
+    position: relative;
+    padding: 12px 18px 11px;
+    border-bottom: 1px solid #292c33;
+    cursor: pointer;
+    background-color: #393c43;
+}
+.frm_search_main ul li:hover{ background-color: #595b64;cursor: pointer }
+.chat03_content ul li.hover { background: #2e3641;cursor: pointer }
+.wl_font_main ul li.hover { background: #ccc;cursor: pointer }
+.chat03_content ul li.choosed { background: #2e3641; }
+.chat03_content ul li a {cursor: pointer}
+.chat03_content ul img { width: 35px; height: 35px; }
+.chat03_content li label { display: block; position: absolute; width: 9px; height: 9px; left: 27px; }
+.chat02_title_btn {
+    /*background: url(../img/font-icon.png);*/
+    cursor: pointer;float: left;display: block;width: 20px;height: 20px;margin: 3px 6px;}
+.ctb01 { margin-left: 10px; _margin-left: 8px}
+.chat02_img_btn {
+    /*background: url(../img/image-icon.png);*/
+    cursor: pointer;float: left;display: block;width: 20px;height: 20px;margin: 5px 6px;}
+.ctb02 {  margin-left: 10px; _margin-left: 8px; background-color: #eee}
+.chat02_title_t {
+    /*background: url('../img/icon.png') no-repeat 0px -487px; */
+    position: absolute; padding-left: 25px; top: 8px; right: 20px; display: block; width: auto; height: 15px; }
+.chat02_title_t a { color: #333; font-size: 12px; text-decoration: none; }
+.chat02_title_t a:hover { color: #f60; text-decoration: underline; }
+.chat01_title ul li { position: relative; padding: 3px 6px; height: 31px; _padding-bottom: 0px; }
+.chat01_title ul img { width: 30px; height: 30px; }
+.chat01_name { color: #333; position: absolute; top: 9px; left: 40px; display: block;text-decoration: none;}
+.message_box { display: none;height: 405px;overflow-y: auto;}
+.message {clear: both; padding: 10px 10px;}
+.message .wrap-text .wrap-content{padding: 4px 10px;word-break: break-all;word-wrap: break-word;display: block}
+.message .wrap-text div.content{margin-left: 5px; border-color: #A2D0E7;  position: relative;  border-radius: 15px;  transition: padding-right 0.2s ease; }
+.self .wrap-text div.content {  margin-left: 5px;  background-color: #ccc;  border-color: #ccc;  position: relative;  border-radius: 15px; transition: padding-right 0.2s ease;}
+.content_from .arrow{top: 3px;width: 15px;  height: 10px;  border: none;
+    /*background: url(../img/arrows.png);  */
+    background-size: 15px auto;  position: absolute;  }
+.pull-left{float: left;}
+.pull-right{float: right;}
+.text-algin-r{text-align: right;}
+.message .chat_time{color:#999;margin-bottom: 5px;}
+
+.wl_font_box { position: absolute; bottom: 22px; left: 5px; display: none; }
+.wl_font_content { background: #fff; border: 1px #ccc solid; width: 34px; height: 95px; margin: 3px 4px; }
+.wl_font_main ul li {  height: 11px;line-height: 11px; margin: -1px 0 0 -1px; padding: 4px 2px; text-align: center; }
+.wl_font_main ul li a {  text-decoration: none;color: #000;}
+.wl_font_main ul li img { width: 22px; height: 22px; }
+.wlf_icon {
+    /*background: url('../img/arrows.png') no-repeat 0 0; */
+    position: absolute; width: 22px; height: 9px; bottom: -5px; left: 9px; }
+.chat01_content{
+    height: 410px;
+}
+#replyButton a{
+    display: block;
+    padding: 5px 15px;
+    text-decoration: none;
+    background-color: #fff;
+    color: #222;
+    border-radius: 4px;
+    border: 1px solid #c1c1c1;
+}
+
+.content_to .arrow{
+    position: absolute;
+    /*background: url(../img/arrows.png);*/
+    background-size: 15px auto;
+    top: 3px;
+    right: -8px;
+    width: 15px;
+    height: 10px;
+    border: none;
+    background-position: 0 -14px;
+
+    /*   display: block;*/
+}
+audio:not([controls]) {
+    display: none;
+}
+audio {
+    width: 300px;
+    height: 32px;
+}
+.audio_img {
+    height: 15px;
+    margin-right: 15px;
+}
+.muted {
+    color: #999;
+}
+.remarkRed{
+    color:red ;
+}
+/* 效果CSS结束 */
+::-webkit-scrollbar {
+    width: 10px;
+} /* 这是针对缺省样式 (必须的) */
+::-webkit-scrollbar-track {
+    /* background-color: #b46868;*/
+} /* 滚动条的滑轨背景颜色 */
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+} /* 滑块颜色 */
+
+::-webkit-scrollbar-button {
+    /*   background-color: #7c2929;*/
+} /* 滑轨两头的监听按钮颜色 */
+
+::-webkit-scrollbar-corner {
+    background-color: black;
+} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+.frm_search_main ul img {
+    width: 35px;
+    height: 35px;
+}
+/*#frm_search_div{
+    display: none;
+}*/
+.frm_search_div{
+    position: absolute;
+    z-index: 10;
+    background: #33363b;
+    width: 244px;
+    top: 36px;
+    left: 0;
+    box-shadow: 0 0 10px #2a2a2a;
+    -moz-box-shadow: 0 0 10px #2a2a2a;
+    -webkit-box-shadow: 0 0 10px #2a2a2a;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    /* outline: none;*/
+}
+.frm_search_div .frm_search_content{
+    background: #393c43;
+    max-height: 420px;
+    position: relative;
+    padding: 0px;
+    overflow: hidden;
+}
+.frm_search_div .frm_search_content .frm_search_main{
+    margin-bottom: 0px;
+    margin-right: 0px;
+    max-height: 420px;
+    border: none;
+    left: 0;
+    padding: 0;
+    position: relative;
+    top: 0;
+    width: auto;
+    overflow-y: auto;
+}
+.on{
+    background-color: #595b64 !important;
+}
+.dropdown {
+    position: relative;
+    z-index: 1000;
+}
+.dropdown.contextMenu {
+    position: absolute;
+}
+
+/*#contextMenu{*/
+/*right: 0px;*/
+/*}*/
+.dropdown_menu {
+    background-color: #fff;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #d6d6d6;
+    box-shadow: 2px 3px 10px rgba(0,0,0,.1);
+    -moz-box-shadow: rgba(0,0,0,.1) 2px 3px 10px;
+    -webkit-box-shadow: rgba(0,0,0,.1) 2px 3px 10px;
+    min-width: 100px;
+}
+.dropdown_menu li{
+    padding-left: 10px;
+}
+.dropdown_menu li a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    padding: 8px;
+    border-bottom: 1px solid #f1f1f1;
+    text-align: left;
+}
